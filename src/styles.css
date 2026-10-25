@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --color-bg: #f3eee6;
+  --color-surface: #fbf8f3;
+  --color-ink: #1c1916;
+  --color-muted: #6e655c;
+  --color-line: #e4d9cc;
+  --color-copper: #c45c26;
+  --color-copper-soft: #f3e2d4;
+  --color-pine: #1d6b48;
+  --color-pine-soft: #e3f0e8;
+  --color-wine: #8e2e2e;
+  --color-wine-soft: #f8e4e1;
+  --color-sidebar: #1c1916;
+  --color-sidebar-fg: #f6f1ea;
+  --color-sidebar-muted: #b7aea3;
+  --color-sidebar-line: #332e29;
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--color-copper-soft);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-copper);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
